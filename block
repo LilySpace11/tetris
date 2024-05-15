@@ -1,0 +1,67 @@
+#include <stdio.h>
+
+#define BLOCK_HEIGHT 4
+#define BLOCK_WIDTH 4
+
+#define FIELD_HEIGHT 23
+#define FIELD_WIDTH 18
+
+int block[BLOCK_HEIGHT][BLOCK_WIDTH];
+int stage[FIELD_HEIGHT][FIELD_WIDTH];
+int field[FIELD_HEIGHT][FIELD_WIDTH];
+
+int blocks[BLOCK_HEIGHT][BLOCK_WIDTH] = {
+    {0,0,0,0},
+    {0,1,1,0},
+    {0,1,1,0},
+    {0,0,0,0}
+    };
+
+int block_x, block_y;
+
+// 初期化
+void my_init(){
+    int i, j;
+
+    for(i=0; FIELD_HEIGHT; i++){
+        for(j=0; j<FIELD_WIDTH; j++){
+            stage[i][0] = 9;
+            stage[i][1] = 9;
+            stage[i][2] = 9;
+            stage[20][j] = 9;
+            stage[21][j] = 9;
+            stage[22][j] = 9;
+            stage[i][15] = 9;
+            stage[i][16] = 9;
+            stage[i][17] = 9;
+        }
+    }
+
+    block_x = 7;
+    block_y = 0;
+
+}
+
+// 確認
+int main(void){
+    int i, j;
+
+    my_init();
+    
+    // for(i=0; i<BLOCK_HEIGHT; i++){
+    //     for(j=0; j<BLOCK_WIDTH; j++){
+    //         printf("%d ", blocks[i][j]);
+    //     }
+    //     printf("\n");
+    // }
+
+    for(i=0; FIELD_HEIGHT; i++){
+        for(j=0; j<FIELD_WIDTH; j++){
+            printf("%d ", stage[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+
